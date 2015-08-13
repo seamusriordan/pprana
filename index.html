@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Historical PPR Statistical Distributions</title>
+</head>
+<body>
+
+<script>
+function changeyear(newyear){
+    imgs = document.getElementsByTagName("img");
+
+    console.log("HI");
+    console.log(imgs);
+    for( i = 0; i < imgs.length; i++ ){
+        thissrc = imgs[i].src.split("/");
+        imgs[i].src = newyear + "/"+ thissrc[thissrc.length-1]
+    }
+
+    console.log(document.getElementById("yeartitle").innerHTML)
+    document.getElementById("yeartitle").innerHTML= newyear+" PPR Statistical Distributions";
+}
+
+</script>
+
+<h1 id="yeartitle"> 2014 PPR Statistical Distributions</h1>
+
+<h3>Top 30 RB and WR for each scoring system</h3>
+
+
+<select onChange="changeyear(value)">
+    <option value="2014">2014</option>
+    <option value="2013">2013</option>
+    <option value="2012">2012</option>
+    <option value="2011">2011</option>
+    <option value="2010">2010</option>
+</select> <br>
+
+<img src="2014/fullppr.png">
+<img src="2014/halfppr.png"><br>
+<img src="2014/qtrppr.png">
+<img src="2014/noppr.png">
+
+
+</body>
+</html>
