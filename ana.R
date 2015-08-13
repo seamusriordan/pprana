@@ -34,6 +34,9 @@ while( i <= length(year) ){
         rbstats <- stats[stats$Pos=="RB",]
         wrstats <- stats[stats$Pos=="WR",]
 
+#        print(head(rbstats[order(rbstats$FP, decreasing=TRUE),c("Name", "FP")],5))
+#        print(head(wrstats[order(rbstats$FP, decreasing=TRUE),c("Name", "FP")],5))
+
         png(paste(year[i],"/", pprsuf[j], "ppr.png", sep=""))
         rbf <- hist(head(rbstats[order(rbstats$FP, decreasing=TRUE),]$FP,nstat), breaks=seq(minval,maxval,by=30), xlim=c(50,500), ylim=c(0,0.02), freq=FALSE,  col=rgb(0.1,0.1,1.0,0.5), main=paste(pprval[j], " PPR - ", year[i]), xlab="Points")
         wrf <- hist(head(wrstats[order(wrstats$FP, decreasing=TRUE),]$FP,nstat), breaks=seq(minval,maxval,by=30), xlim=c(50,500), freq=FALSE,  col=rgb(1.0,0.1,0.1,0.5), add=TRUE)
