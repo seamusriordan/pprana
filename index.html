@@ -8,14 +8,11 @@
 function changeyear(newyear){
     imgs = document.getElementsByTagName("img");
 
-    console.log("HI");
-    console.log(imgs);
     for( i = 0; i < imgs.length; i++ ){
         thissrc = imgs[i].src.split("/");
         imgs[i].src = newyear + "/"+ thissrc[thissrc.length-1]
     }
 
-    console.log(document.getElementById("yeartitle").innerHTML)
     document.getElementById("yeartitle").innerHTML= newyear+" PPR Statistical Distributions";
 }
 
